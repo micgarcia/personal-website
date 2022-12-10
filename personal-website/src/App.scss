@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+}
+
+@mixin centeredGrid() {
+  display: grid;
+  justify-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+$font-stack: 'Jura', sans-serif;
+
+$primary-color: #6E07F3;
+/*
+  ==========
+  Homepage
+  ==========
+*/
+
+.homePage {
+  @include centeredGrid();
+  font-family: $font-stack;
+}
+
+/*
+  ==========
+  Title
+  ==========
+*/
+
+.titleCont {
+  @include centeredGrid();
+  padding: 4em 0 4em 0;
+}
+
+/*
+  ==========
+  Bio
+  ==========
+*/
+
+.bioCont {
+  @include centeredGrid();
+  background-color: $primary-color;
+  color: white;
+  width: 100%;
+
+  padding: 2em 0 2em 0;
+}
+
+
+/*
+  ==========
+  Skills
+  ==========
+*/
+
+@mixin skillsStyling() {
+  grid-template-rows: 2fr 1fr 4fr;
+  h1 {
+    padding: 0;
+    margin: 0;
+    align-self: end;
+  }
+  h2 {
+    margin: 0;
+    padding: 0;
+    align-self: end;
+    color: $primary-color;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.skillsCont {
+  @include centeredGrid();
+  width: 80%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+
+  .frontEnd {
+    @include centeredGrid();
+    @include skillsStyling();
+  }
+
+  .backEnd {
+    @include centeredGrid();
+    @include skillsStyling();
+  }
+
+  .development {
+    @include centeredGrid();
+    @include skillsStyling();
+  }
+}
+
+
+/*
+  ==========
+  Projects
+  ==========
+*/
+
+.projectsCont {
+  @include centeredGrid();
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/*
+  ==========
+  Links
+  ==========
+*/
+
+.linksCont {
+  @include centeredGrid();
+  grid-template-columns: repeat(2, 1fr);
+  background-color: $primary-color;
+  color: white;
+  width: 100%;
+}
