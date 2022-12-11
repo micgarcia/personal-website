@@ -31,6 +31,14 @@ $primary-color: #6E07F3;
 .titleCont {
   @include centeredGrid();
   padding: 4em 0 4em 0;
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
 }
 
 /*
@@ -56,7 +64,10 @@ $primary-color: #6E07F3;
 */
 
 @mixin skillsStyling() {
-  grid-template-rows: 2fr 1fr 4fr;
+  grid-template-rows:  30px 2fr 2fr 4fr;
+  margin-bottom: 6em;
+  margin-top: 3em;
+  min-width: 265px;
   h1 {
     padding: 0;
     margin: 0;
@@ -65,29 +76,55 @@ $primary-color: #6E07F3;
   h2 {
     margin: 0;
     padding: 0;
-    align-self: end;
+    align-self: center;
     color: $primary-color;
   }
   ul {
     margin: 0;
     padding: 0;
+    justify-self: start;
+    list-style: none;
   }
+  ul li::before {
+    content: "\2022";
+    color: $primary-color;
+    display: inline-block;
+    font-weight: bold;
+    width: 1em;
+    margin-left: -1em;
+
+  }
+
+
 }
 
 .skillsCont {
   @include centeredGrid();
-  width: 80%;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 95%;
+  padding-top: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  border-bottom: 1px solid rgb(209, 207, 207);
 
+  .material-symbols-outlined {
+    color: $primary-color;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 48;
+    font-size: 36px;
+  }
 
   .frontEnd {
     @include centeredGrid();
     @include skillsStyling();
+
   }
 
   .backEnd {
     @include centeredGrid();
     @include skillsStyling();
+
   }
 
   .development {
@@ -106,6 +143,8 @@ $primary-color: #6E07F3;
 .projectsCont {
   @include centeredGrid();
   grid-template-columns: repeat(2, 1fr);
+  width: 80%;
+  padding: 3em 0 3em 0;
 }
 
 /*
