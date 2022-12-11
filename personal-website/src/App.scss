@@ -142,7 +142,7 @@ $primary-color: #6E07F3;
 
 .projectsCont {
   @include centeredGrid();
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   width: 80%;
   padding: 3em 0 3em 0;
 }
@@ -155,8 +155,27 @@ $primary-color: #6E07F3;
 
 .linksCont {
   @include centeredGrid();
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
   background-color: $primary-color;
   color: white;
   width: 100%;
+  font-size: 18px;
+  padding: 2em 0 2em 0;
+
+  h4, a {
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+  }
+
+  .github:hover {
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .linkedin:hover {
+    font-weight: 800;
+    cursor: pointer;
+  }
 }
