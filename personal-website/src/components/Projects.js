@@ -2,7 +2,8 @@ function Projects() {
   return (
     <div className="projectsCont">
       <div className="projectOne">
-        <h1>Project One</h1>
+        <h1>Movie Tracker</h1>
+        <div className="movieProjPic"></div>
         <p>Project Description</p>
       </div>
       <div className="projectTwo">

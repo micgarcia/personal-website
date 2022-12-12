@@ -2,6 +2,7 @@ body {
   margin: 0;
 }
 
+
 @mixin centeredGrid() {
   display: grid;
   justify-items: center;
@@ -11,6 +12,9 @@ body {
 $font-stack: 'Jura', sans-serif;
 
 $primary-color: #6E07F3;
+
+
+
 /*
   ==========
   Homepage
@@ -145,6 +149,14 @@ $primary-color: #6E07F3;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   width: 80%;
   padding: 3em 0 3em 0;
+
+  .movieProjPic {
+    background-image: url("./assets/letterbox.png");
+    background-size: cover;
+    min-height: 225px;
+    min-width: 450px;
+
+  }
 }
 
 /*
