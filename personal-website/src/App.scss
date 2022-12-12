@@ -34,7 +34,7 @@ $primary-color: #6E07F3;
 
 .titleCont {
   @include centeredGrid();
-  padding: 4em 0 4em 0;
+  padding: 8em 0 8em 0;
 
   h1 {
     font-size: 36px;
@@ -146,16 +146,34 @@ $primary-color: #6E07F3;
 
 .projectsCont {
   @include centeredGrid();
-  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-  width: 80%;
+  grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+  width: 90%;
   padding: 3em 0 3em 0;
+
+  .projectOne {
+    @include centeredGrid();
+    grid-template-rows: 80px 225px 1fr;
+
+  }
 
   .movieProjPic {
     background-image: url("./assets/letterbox.png");
     background-size: cover;
-    min-height: 225px;
-    min-width: 450px;
+    height: 225px;
+    width: 450px;
+  }
 
+  .projectTwo {
+    @include centeredGrid();
+    grid-template-rows: 80px 225px 150px;
+
+  }
+
+  .invProjPic {
+    background-image: url("./assets/inventory.png");
+    background-size: cover;
+    height: 225px;
+    width: 450px;
   }
 }
 
@@ -174,6 +192,62 @@ $primary-color: #6E07F3;
   width: 100%;
   font-size: 18px;
   padding: 2em 0 2em 0;
+
+  h4, a {
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+  }
+
+  .emailCont {
+    display: grid;
+    grid-template-columns: 35px 208px;
+    align-items: center;
+    height: 70px;
+  }
+
+  .phoneCont {
+    display: grid;
+    grid-template-columns: 35px 208px;
+    align-items: center;
+    height: 70px;
+  }
+
+  .gitCont {
+    display: grid;
+    grid-template-columns: 35px 208px;
+    align-items: center;
+    height: 70px;
+  }
+
+  .linkedinCont {
+    display: grid;
+    grid-template-columns: 35px 208px;
+    align-items: center;
+    height: 70px;
+  }
+
+  .github:hover {
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .linkedin:hover {
+    font-weight: 800;
+    cursor: pointer;
+  }
+}
+
+
+.navbarCont {
+  @include centeredGrid();
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  align-items: center;
+  background-color: $primary-color;
+  color: white;
+  width: 100%;
+  font-size: 18px;
+  padding: 0.25em 0 0.25em 0;
 
   h4, a {
     font-weight: 400;
