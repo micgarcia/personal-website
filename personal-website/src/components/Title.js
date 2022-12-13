@@ -12,7 +12,8 @@ function Title() {
         'Full Stack Web Developer'
       ],
       typeSpeed: 50,
-      showCursor: false
+      showCursor: false,
+      startDelay: 2500
     };
 
     const nameOptions = {
@@ -21,7 +22,7 @@ function Title() {
       ],
       typeSpeed: 50,
       showCursor: false,
-      startDelay: 2500
+      startDelay: 5000
     }
 
     typed.current = new Typed(title.current, titleOptions);
