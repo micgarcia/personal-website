@@ -38,13 +38,14 @@ $primary-color: #6E07F3;
   width: 100%;
   color: white;
 
-  background: url(./assets/desk.jpg) no-repeat center center fixed;
+  background: url(./assets/desk.jpeg) no-repeat center center fixed;
   background-size: cover;
+  background-position: 0 0;
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 
   h1 {
     font-size: 38px;
-    margin-top: 4em;
+    margin-top: 5em;
   }
 
   h2 {
