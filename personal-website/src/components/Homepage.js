@@ -13,7 +13,7 @@ function Homepage() {
       <Bio />
       <Skills />
       <Projects />
-      <Links />
+
 
     </div>
   )
