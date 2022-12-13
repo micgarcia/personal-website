@@ -9,7 +9,6 @@ import 'material-symbols';
 function Homepage() {
   return (
     <div className="homePage">
-      <Navbar />
       <Title />
       <Bio />
       <Skills />
