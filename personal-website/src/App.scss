@@ -7,6 +7,7 @@ body {
 }
 
 
+
 @mixin centeredGrid() {
   display: grid;
   justify-items: center;
@@ -29,6 +30,18 @@ $font-stack: 'Jura', sans-serif;
 $primary-color: #EEC373;
 $shadow-settings: inset 0 0 0 1000px rgba(67, 66, 66, 0.5);
 $blur-settings: blur(7px);
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 10px
+}
 
 /*
   ==========
@@ -101,7 +114,7 @@ $blur-settings: blur(7px);
 
   .navbarCont {
     @include centeredGrid();
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
     align-items: center;
 
     color: white;
@@ -119,6 +132,7 @@ $blur-settings: blur(7px);
       color: white;
       text-decoration: none;
       margin: 0;
+      letter-spacing: 1px;
     }
 
     .emailCont {
@@ -181,6 +195,20 @@ $blur-settings: blur(7px);
   border-style: none;
   h1 {
     color: $primary-color;
+    letter-spacing: 3px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 2em;
+    width: 90%;
+  }
+
+  hr {
+    margin: 2em auto 2em auto;
+    width: 80%;
+    justify-self: center;
+    border-color: $primary-color;
   }
 }
 
@@ -201,12 +229,14 @@ $blur-settings: blur(7px);
     margin: 0;
     align-self: end;
     color: white;
+    letter-spacing: 5px;
   }
   h2 {
     margin: 0;
     padding: 0;
     align-self: center;
     color: $primary-color;
+    letter-spacing: 3px;
   }
   ul {
     margin: 0;
@@ -215,6 +245,7 @@ $blur-settings: blur(7px);
     list-style: none;
     font-size: 18px;
     color: white;
+    letter-spacing: 0.75px;
   }
   ul li::before {
     content: "\2022";
@@ -294,12 +325,15 @@ $blur-settings: blur(7px);
 
   h1 {
     color: $primary-color;
+    letter-spacing: 3px;
   }
 
   p {
     margin: 1.5em 3em 0 3em;
     color: white;
-    text-align: center
+    text-align: center;
+    line-height: 1.5em;
+    letter-spacing: 0.5px;
   }
 
   b {

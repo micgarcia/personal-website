@@ -3,7 +3,7 @@ function Skills() {
   return (
     <div className="skillsCont">
       <div className="frontEnd">
-        <span class="material-symbols-outlined">monitor</span>
+        <span className="material-symbols-outlined">monitor</span>
         <h1>Front End</h1>
         <h2>Tools</h2>
         <ul>
@@ -17,7 +17,7 @@ function Skills() {
         </ul>
       </div>
       <div className="backEnd">
-        <span class="material-symbols-outlined">dns</span>
+        <span className="material-symbols-outlined">dns</span>
         <h1>Back End</h1>
           <h2>Tools</h2>
           <ul>
@@ -31,7 +31,7 @@ function Skills() {
           </ul>
       </div>
       <div className="development">
-        <span class="material-symbols-outlined">developer_mode</span>
+        <span className="material-symbols-outlined">developer_mode</span>
         <h1>Developer Skills</h1>
         <h2>Design Patterns</h2>
         <ul>
