@@ -361,7 +361,7 @@ $blur-settings: blur(7px);
     transition: opacity .25s ease, background-color .25s ease;
   }
 
-  @media (max-width: 550) {
+  @media only screen and (max-width: 550px) {
     .movieProjPic {
       background-image: url("./assets/letterbox.png");
       background-size: cover;
