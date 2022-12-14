@@ -58,18 +58,14 @@ $blur-settings: blur(7px);
 
   @media (max-width: 500px) {
     max-width: 100%;
-  }
-
-  @media (max-width: 500px) {
     background-position: -300px 0;
-
+    background: url(./assets/desk.jpeg) no-repeat center center initial;
+    background-size: cover;
   }
 
   background: url(./assets/desk.jpeg) no-repeat center center fixed;
   background-size: cover;
-  @media (min-width: 500px) {
-    background-position: 0 0;
-  }
+  background-position: 0 0;
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
 }
 
