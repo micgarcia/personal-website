@@ -79,8 +79,9 @@ $blur-settings: blur(7px);
   @include centeredGrid();
 
   @media (max-width: 500px) {
-    padding: 0 0 10em 0;
+    padding: 0 0 5em 0;
   }
+
 
   padding: 0 0 15em 0;
   width: 95%;
@@ -90,6 +91,11 @@ $blur-settings: blur(7px);
 
   h1 {
     font-size: 42px;
+
+    @media (max-width: 500px) {
+      margin-top: 1em;
+    }
+
     margin-top: 4.5em;
     text-align: center;
 
@@ -143,10 +149,10 @@ $blur-settings: blur(7px);
     @include centeredGrid();
 
     @media (max-width: 500px) {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
-    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
     align-items: center;
 
     color: white;
@@ -169,28 +175,28 @@ $blur-settings: blur(7px);
 
     .emailCont {
       display: grid;
-      grid-template-columns: 35px 227px;
+      grid-template-columns: 35px 150px;
       align-items: center;
       height: 50px;
     }
 
     .phoneCont {
       display: grid;
-      grid-template-columns: 35px 227px;
+      grid-template-columns: 35px 150px;
       align-items: center;
       height: 50px;
     }
 
     .gitCont {
       display: grid;
-      grid-template-columns: 35px 227px;
+      grid-template-columns: 35px 150px;
       align-items: center;
       height: 50px;
     }
 
     .linkedinCont {
       display: grid;
-      grid-template-columns: 35px 227px;
+      grid-template-columns: 35px 150px;
       align-items: center;
       height: 50px;
     }
@@ -222,7 +228,7 @@ $blur-settings: blur(7px);
   width: 95%;
   border-radius: 15px;
   text-align: center;
-  padding: 1em 0 2em 0;
+  padding: 2em 0 2em 0;
 
   border-style: none;
   h1 {

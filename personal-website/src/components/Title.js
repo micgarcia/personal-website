@@ -61,7 +61,7 @@ function Title() {
 
         <div className="emailCont">
           <span className="material-symbols-outlined">mail</span>
-          <h4 className="emailLink">garciam9185@gmail.com</h4>
+          <h4 className="emailLink">garciam9185@ gmail.com</h4>
         </div>
         <div className="phoneCont">
           <span className="material-symbols-outlined">phone</span>
