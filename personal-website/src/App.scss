@@ -58,9 +58,9 @@ $blur-settings: blur(7px);
 
   @media (max-width: 500px) {
     max-width: 100%;
-    background-position: -300px 0;
-    background: url(./assets/desk.jpeg) no-repeat center center scroll;
-    background-size: cover;
+    background-position: 0 0;
+    background: url(./assets/plant.jpg) repeat center center scroll;
+    background-size: contain;
   }
 
   background: url(./assets/desk.jpeg) no-repeat center center fixed;
