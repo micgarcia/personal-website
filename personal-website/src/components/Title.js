@@ -1,5 +1,6 @@
 import Typed from "typed.js";
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 function Title() {
   const title = React.useRef(null);
@@ -11,19 +12,20 @@ function Title() {
       strings: [
         'Full Stack Web Developer'
       ],
-      typeSpeed: 50,
+      typeSpeed: 60,
       showCursor: false,
-      startDelay: 2500
+      startDelay: 1500
     };
 
     const nameOptions = {
       strings: [
         'Michael Garcia'
       ],
-      typeSpeed: 50,
+      typeSpeed: 60,
       showCursor: false,
-      startDelay: 5000
+      startDelay: 4000
     }
+
 
     typed.current = new Typed(title.current, titleOptions);
 
@@ -40,11 +42,11 @@ function Title() {
       <div className="navbarCont">
         <div class="gitCont">
           <span class="material-symbols-outlined">person</span>
-          <a className="github" href="https://github.com/micgarcia">Github</a>
+          <a className="github" href="https://github.com/micgarcia" target="_blank">Github</a>
         </div>
         <div class="linkedinCont">
           <span class="material-symbols-outlined">group</span>
-          <a className="linkedin" href="https://www.linkedin.com/in/michael-garcia-developer/">Linkedin</a>
+          <a className="linkedin" href="https://www.linkedin.com/in/michael-garcia-developer/" target="_blank">Linkedin</a>
         </div>
 
         <div className="emailCont">
@@ -59,6 +61,7 @@ function Title() {
 
       <h1 ref={title}></h1>
       <h2 ref={name}></h2>
+      <div className="profilePic"></div>
 
     </div>
   )

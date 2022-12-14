@@ -1,5 +1,9 @@
 body {
   margin: 0;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 
@@ -8,13 +12,23 @@ body {
   justify-items: center;
 }
 
+@mixin css-performance() {
+  -webkit-backface-visibility: hidden;
+
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+
+  transform: translate3d(0,0,0);
+  transform: translateZ(0);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
 $font-stack: 'Jura', sans-serif;
-
-$primary-color: #6E07F3;
-$shadow-settings: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-$blur-settings: blur(15px);
-
+// #6E07F3
+$primary-color: #EEC373;
+$shadow-settings: inset 0 0 0 1000px rgba(67, 66, 66, 0.5);
+$blur-settings: blur(7px);
 
 /*
   ==========
@@ -29,7 +43,7 @@ $blur-settings: blur(15px);
   background: url(./assets/desk.jpeg) no-repeat center center fixed;
   background-size: cover;
   background-position: 0 0;
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
 }
 
 /*
@@ -40,21 +54,49 @@ $blur-settings: blur(15px);
 
 .titleCont {
   @include centeredGrid();
-  padding: 0 0 20em 0;
+  padding: 0 0 15em 0;
   width: 100%;
   color: white;
 
 
   h1 {
     font-size: 42px;
-    margin-top: 5em;
+    margin-top: 4.5em;
     text-align: center;
+    letter-spacing: 20px;
   }
 
   h2 {
     font-size: 34px;
-    height: 33px
+    height: 33px;
+    letter-spacing: 10px
+  }
 
+  .profilePic {
+    background: url(./assets/profile.JPG) no-repeat;
+    background-size: cover;
+    background-position: -22px 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+
+    margin-top: 2em;
+
+    animation: fadeIn ease 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
   }
 
   .navbarCont {
@@ -127,6 +169,7 @@ $blur-settings: blur(15px);
 
 .bioCont {
   @include centeredGrid();
+  @include css-performance();
   box-shadow: $shadow-settings;
   backdrop-filter: $blur-settings;
   color: white;
@@ -135,6 +178,7 @@ $blur-settings: blur(15px);
   text-align: center;
   padding: 1em 0 2em 0;
 
+  border-style: none;
   h1 {
     color: $primary-color;
   }
@@ -187,6 +231,7 @@ $blur-settings: blur(15px);
 
 .skillsCont {
   @include centeredGrid();
+  @include css-performance();
   width: 95%;
   padding-top: 2em;
   margin-top: 8em;
@@ -195,6 +240,7 @@ $blur-settings: blur(15px);
   border-radius: 15px;
   box-shadow: $shadow-settings;
   backdrop-filter: $blur-settings;
+
 
   .material-symbols-outlined {
     color: $primary-color;
@@ -233,6 +279,7 @@ $blur-settings: blur(15px);
 
 .projectsCont {
   @include centeredGrid();
+  @include css-performance();
   row-gap: 3em;
   grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
   width: 95%;
@@ -242,10 +289,11 @@ $blur-settings: blur(15px);
   margin-bottom: 8em;
   box-shadow: $shadow-settings;
   backdrop-filter: $blur-settings;
+
   border-radius: 15px;
 
   h1 {
-    color: white;
+    color: $primary-color;
   }
 
   p {
@@ -264,11 +312,76 @@ $blur-settings: blur(15px);
 
   }
 
+  @mixin projHover() {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.8);
+  }
+
+  @mixin projButton() {
+    opacity: 0;
+    color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: $primary-color;
+    height: 2.5em;
+    width: 7em;
+    transition: opacity .25s ease, background-color .25s ease;
+  }
+
   .movieProjPic {
     background-image: url("./assets/letterbox.png");
     background-size: cover;
     height: 225px;
     width: 450px;
+    border-radius: 10px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    transition: box-shadow ease 0.25s;
+    @include centeredGrid();
+    .movieSiteLink {
+      @include projButton();
+      @include centeredGrid();
+      align-items: center;
+      a {
+        height: 100%;
+        width: 100%;
+        @include centeredGrid();
+        align-items: center;
+      }
+    }
+    .movieSiteLink:hover {
+      color: black;
+      background-color: $primary-color;
+      cursor: pointer;
+    }
+    .movieGitLink {
+      @include projButton();
+      @include centeredGrid();
+      align-items: center;
+      a {
+        height: 100%;
+        width: 100%;
+        @include centeredGrid();
+        align-items: center;
+      }
+    }
+    .movieGitLink:hover {
+      color: black;
+      background-color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  .movieProjPic:hover {
+    @include projHover();
+  }
+
+  .movieProjPic:hover .movieSiteLink {
+    opacity: 1;
+  }
+
+  .movieProjPic:hover .movieGitLink {
+    opacity: 1;
   }
 
   .projectTwo {
@@ -282,65 +395,34 @@ $blur-settings: blur(15px);
     background-size: cover;
     height: 225px;
     width: 450px;
+    border-radius: 10px;
+    align-items: center;
+    transition: box-shadow ease 0.25s;
+    @include centeredGrid();
+    .invGitLink {
+      @include projButton();
+      @include centeredGrid();
+      align-items: center;
+      a {
+        height: 100%;
+        width: 100%;
+        @include centeredGrid();
+        align-items: center;
+      }
+    }
+    .invGitLink:hover {
+      color: black;
+      background-color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  .invProjPic:hover {
+    @include projHover();
+  }
+
+  .invProjPic:hover .invGitLink {
+    opacity: 1;
   }
 }
 
-/*
-  ==========
-  Links
-  ==========
-*/
-
-.linksCont {
-  @include centeredGrid();
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  align-items: center;
-  color: white;
-  width: 100%;
-  font-size: 18px;
-  padding: 2em 0 2em 0;
-
-  h4, a {
-    font-weight: 400;
-    color: white;
-    text-decoration: none;
-  }
-
-  .emailCont {
-    display: grid;
-    grid-template-columns: 35px 208px;
-    align-items: center;
-    height: 70px;
-  }
-
-  .phoneCont {
-    display: grid;
-    grid-template-columns: 35px 208px;
-    align-items: center;
-    height: 70px;
-  }
-
-  .gitCont {
-    display: grid;
-    grid-template-columns: 35px 208px;
-    align-items: center;
-    height: 70px;
-  }
-
-  .linkedinCont {
-    display: grid;
-    grid-template-columns: 35px 208px;
-    align-items: center;
-    height: 70px;
-  }
-
-  .github:hover {
-    font-weight: 800;
-    cursor: pointer;
-  }
-
-  .linkedin:hover {
-    font-weight: 800;
-    cursor: pointer;
-  }
-}
