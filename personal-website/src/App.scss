@@ -361,6 +361,107 @@ $blur-settings: blur(7px);
     transition: opacity .25s ease, background-color .25s ease;
   }
 
+  @media (max-width: 550) {
+    .movieProjPic {
+      background-image: url("./assets/letterbox.png");
+      background-size: cover;
+      height: 175px;
+      width: 350px;
+      border-radius: 10px;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      justify-items: center;
+      transition: box-shadow ease 0.25s;
+      @include centeredGrid();
+      .movieSiteLink {
+        @include projButton();
+        @include centeredGrid();
+        align-items: center;
+        a {
+          height: 100%;
+          width: 100%;
+          @include centeredGrid();
+          align-items: center;
+        }
+      }
+      .movieSiteLink:hover {
+        color: black;
+        background-color: $primary-color;
+        cursor: pointer;
+      }
+      .movieGitLink {
+        @include projButton();
+        @include centeredGrid();
+        align-items: center;
+        a {
+          height: 100%;
+          width: 100%;
+          @include centeredGrid();
+          align-items: center;
+        }
+      }
+      .movieGitLink:hover {
+        color: black;
+        background-color: $primary-color;
+        cursor: pointer;
+      }
+    }
+
+    .movieProjPic:hover {
+      @include projHover();
+    }
+
+    .movieProjPic:hover .movieSiteLink {
+      opacity: 1;
+    }
+
+    .movieProjPic:hover .movieGitLink {
+      opacity: 1;
+    }
+
+    .projectTwo {
+      @include centeredGrid();
+      grid-template-rows: 80px 225px 150px;
+
+    }
+
+    .invProjPic {
+      background-image: url("./assets/inventory.png");
+      background-size: cover;
+      height: 175px;
+      width: 350px;
+      border-radius: 10px;
+      align-items: center;
+      transition: box-shadow ease 0.25s;
+      @include centeredGrid();
+      .invGitLink {
+        @include projButton();
+        @include centeredGrid();
+        align-items: center;
+        a {
+          height: 100%;
+          width: 100%;
+          @include centeredGrid();
+          align-items: center;
+        }
+      }
+      .invGitLink:hover {
+        color: black;
+        background-color: $primary-color;
+        cursor: pointer;
+      }
+    }
+
+    .invProjPic:hover {
+      @include projHover();
+    }
+
+    .invProjPic:hover .invGitLink {
+      opacity: 1;
+    }
+  }
+
+
   .movieProjPic {
     background-image: url("./assets/letterbox.png");
     background-size: cover;

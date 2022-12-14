@@ -26,10 +26,20 @@ function Title() {
       startDelay: 4000
     }
 
+    const onPageLoad = () => {
+      typed.current = new Typed(title.current, titleOptions);
 
-    typed.current = new Typed(title.current, titleOptions);
+      typed.current = new Typed(name.current, nameOptions)
+    }
 
-    typed.current = new Typed(name.current, nameOptions)
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+
+
 
     return () => {
       typed.current.destroy();
