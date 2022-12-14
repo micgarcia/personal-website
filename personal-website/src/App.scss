@@ -33,15 +33,18 @@ $blur-settings: blur(7px);
 
 
 /* width */
-::-webkit-scrollbar {
-  width: 12px;
+@media (min-width: 510px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: 10px
+  }
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $primary-color;
-  border-radius: 10px
-}
 
 /*
   ==========
@@ -52,6 +55,10 @@ $blur-settings: blur(7px);
 .homePage {
   @include centeredGrid();
   font-family: $font-stack;
+
+  @media (max-width: 500px) {
+    max-width: 100%;
+  }
 
   background: url(./assets/desk.jpeg) no-repeat center center fixed;
   background-size: cover;
@@ -67,22 +74,39 @@ $blur-settings: blur(7px);
 
 .titleCont {
   @include centeredGrid();
+
+  @media (max-width: 500px) {
+    padding: 0 0 10em 0;
+  }
+
   padding: 0 0 15em 0;
-  width: 100%;
+  width: 95%;
   color: white;
+
 
 
   h1 {
     font-size: 42px;
     margin-top: 4.5em;
     text-align: center;
+
+    @media (max-width: 500px) {
+      letter-spacing: 10px;
+    }
+
     letter-spacing: 20px;
   }
 
   h2 {
     font-size: 34px;
     height: 33px;
-    letter-spacing: 10px
+
+    @media (max-width: 500px) {
+      letter-spacing: 5px;
+    }
+
+    letter-spacing: 10px;
+    text-align: center;
   }
 
   .profilePic {
@@ -114,12 +138,17 @@ $blur-settings: blur(7px);
 
   .navbarCont {
     @include centeredGrid();
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
     grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
     align-items: center;
 
     color: white;
 
-    width: 100%;
+    width: 90%;
     font-size: 18px;
     padding: 0.25em 0 0.25em 0;
 
@@ -137,28 +166,28 @@ $blur-settings: blur(7px);
 
     .emailCont {
       display: grid;
-      grid-template-columns: 35px 208px;
+      grid-template-columns: 35px 227px;
       align-items: center;
       height: 50px;
     }
 
     .phoneCont {
       display: grid;
-      grid-template-columns: 35px 208px;
+      grid-template-columns: 35px 227px;
       align-items: center;
       height: 50px;
     }
 
     .gitCont {
       display: grid;
-      grid-template-columns: 35px 208px;
+      grid-template-columns: 35px 227px;
       align-items: center;
       height: 50px;
     }
 
     .linkedinCont {
       display: grid;
-      grid-template-columns: 35px 208px;
+      grid-template-columns: 35px 227px;
       align-items: center;
       height: 50px;
     }
@@ -222,6 +251,11 @@ $blur-settings: blur(7px);
 @mixin skillsStyling() {
   grid-template-rows:  30px 2fr 2fr 4fr;
   margin-bottom: 6em;
+
+  @media (max-width: 500px) {
+    margin-bottom: 3em;
+  }
+
   margin-top: 3em;
   min-width: 265px;
   h1 {
@@ -241,6 +275,7 @@ $blur-settings: blur(7px);
   ul {
     margin: 0;
     padding: 0;
+    padding-left: 1em;
     justify-self: start;
     list-style: none;
     font-size: 18px;
@@ -265,7 +300,17 @@ $blur-settings: blur(7px);
   @include css-performance();
   width: 95%;
   padding-top: 2em;
+
+  @media (max-width: 500px) {
+    margin-top: 5em;
+  }
+
   margin-top: 8em;
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 
   border-radius: 15px;
@@ -308,21 +353,25 @@ $blur-settings: blur(7px);
   ==========
 */
 
+
 .projectsCont {
   @include centeredGrid();
   @include css-performance();
   row-gap: 3em;
 
-  @media screen and (max-width: 450px) {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    h1 {
-      color: blue;
-    }
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   width: 95%;
   padding: 3em 0 3em 0;
   column-gap: 3em;
+
+  @media (max-width: 500px) {
+    margin-top: 5em;
+  }
+
   margin-top: 8em;
   margin-bottom: 8em;
   box-shadow: $shadow-settings;
@@ -336,6 +385,9 @@ $blur-settings: blur(7px);
   }
 
   p {
+    @media (max-width: 500px) {
+      margin: 0 1.5em 0 1.5em;
+    }
     margin: 1.5em 3em 0 3em;
     color: white;
     text-align: center;
@@ -368,110 +420,16 @@ $blur-settings: blur(7px);
     transition: opacity .25s ease, background-color .25s ease;
   }
 
-  @media only screen and (max-width: 550px) {
-    .movieProjPic {
-      background-image: url("./assets/letterbox.png");
-      background-size: cover;
-      height: 175px;
-      width: 350px;
-      border-radius: 10px;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      justify-items: center;
-      transition: box-shadow ease 0.25s;
-      @include centeredGrid();
-      .movieSiteLink {
-        @include projButton();
-        @include centeredGrid();
-        align-items: center;
-        a {
-          height: 100%;
-          width: 100%;
-          @include centeredGrid();
-          align-items: center;
-        }
-      }
-      .movieSiteLink:hover {
-        color: black;
-        background-color: $primary-color;
-        cursor: pointer;
-      }
-      .movieGitLink {
-        @include projButton();
-        @include centeredGrid();
-        align-items: center;
-        a {
-          height: 100%;
-          width: 100%;
-          @include centeredGrid();
-          align-items: center;
-        }
-      }
-      .movieGitLink:hover {
-        color: black;
-        background-color: $primary-color;
-        cursor: pointer;
-      }
-    }
-
-    .movieProjPic:hover {
-      @include projHover();
-    }
-
-    .movieProjPic:hover .movieSiteLink {
-      opacity: 1;
-    }
-
-    .movieProjPic:hover .movieGitLink {
-      opacity: 1;
-    }
-
-    .projectTwo {
-      @include centeredGrid();
-      grid-template-rows: 80px 225px 150px;
-
-    }
-
-    .invProjPic {
-      background-image: url("./assets/inventory.png");
-      background-size: cover;
-      height: 175px;
-      width: 350px;
-      border-radius: 10px;
-      align-items: center;
-      transition: box-shadow ease 0.25s;
-      @include centeredGrid();
-      .invGitLink {
-        @include projButton();
-        @include centeredGrid();
-        align-items: center;
-        a {
-          height: 100%;
-          width: 100%;
-          @include centeredGrid();
-          align-items: center;
-        }
-      }
-      .invGitLink:hover {
-        color: black;
-        background-color: $primary-color;
-        cursor: pointer;
-      }
-    }
-
-    .invProjPic:hover {
-      @include projHover();
-    }
-
-    .invProjPic:hover .invGitLink {
-      opacity: 1;
-    }
-  }
-
 
   .movieProjPic {
     background-image: url("./assets/letterbox.png");
     background-size: cover;
+
+    @media (max-width: 500px) {
+      height: 175px;
+      width: 350px;
+    }
+
     height: 225px;
     width: 450px;
     border-radius: 10px;
@@ -535,6 +493,12 @@ $blur-settings: blur(7px);
   .invProjPic {
     background-image: url("./assets/inventory.png");
     background-size: cover;
+
+    @media (max-width: 500px) {
+      height: 175px;
+      width: 350px;
+    }
+
     height: 225px;
     width: 450px;
     border-radius: 10px;
@@ -566,5 +530,7 @@ $blur-settings: blur(7px);
   .invProjPic:hover .invGitLink {
     opacity: 1;
   }
+
 }
+
 
