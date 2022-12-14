@@ -312,7 +312,14 @@ $blur-settings: blur(7px);
   @include centeredGrid();
   @include css-performance();
   row-gap: 3em;
-  grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+
+  @media screen and (max-width: 450px) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    h1 {
+      color: blue;
+    }
+  }
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   width: 95%;
   padding: 3em 0 3em 0;
   column-gap: 3em;
