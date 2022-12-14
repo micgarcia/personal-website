@@ -12,7 +12,8 @@ body {
 $font-stack: 'Jura', sans-serif;
 
 $primary-color: #6E07F3;
-$shadow-settings: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+$shadow-settings: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+$blur-settings: blur(15px);
 
 
 /*
@@ -66,6 +67,10 @@ $shadow-settings: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
     width: 100%;
     font-size: 18px;
     padding: 0.25em 0 0.25em 0;
+
+    .material-symbols-outlined {
+      color: $primary-color;
+    }
 
     h4, a {
       font-weight: 400;
@@ -123,11 +128,16 @@ $shadow-settings: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 .bioCont {
   @include centeredGrid();
   box-shadow: $shadow-settings;
+  backdrop-filter: $blur-settings;
   color: white;
   width: 95%;
   border-radius: 15px;
-
+  text-align: center;
   padding: 1em 0 2em 0;
+
+  h1 {
+    color: $primary-color;
+  }
 }
 
 
@@ -184,6 +194,7 @@ $shadow-settings: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 
   border-radius: 15px;
   box-shadow: $shadow-settings;
+  backdrop-filter: $blur-settings;
 
   .material-symbols-outlined {
     color: $primary-color;
@@ -222,6 +233,7 @@ $shadow-settings: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
 
 .projectsCont {
   @include centeredGrid();
+  row-gap: 3em;
   grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
   width: 95%;
   padding: 3em 0 3em 0;
@@ -229,16 +241,21 @@ $shadow-settings: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   margin-top: 8em;
   margin-bottom: 8em;
   box-shadow: $shadow-settings;
+  backdrop-filter: $blur-settings;
   border-radius: 15px;
 
   h1 {
-    color: $primary-color;
+    color: white;
   }
 
   p {
     margin: 1.5em 3em 0 3em;
     color: white;
     text-align: center
+  }
+
+  b {
+    color: $primary-color
   }
 
   .projectOne {
