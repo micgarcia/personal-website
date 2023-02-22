@@ -22,6 +22,7 @@ function Skills() {
           <h2>Tools</h2>
           <ul>
             <li>Node.js</li>
+            <li>SQL</li>
             <li>NoSQL (MongoDB)</li>
             <li>Express</li>
             <li>Java</li>
