@@ -5,7 +5,7 @@ function Projects() {
         <h1>Movie Tracker</h1>
         <div className="movieProjPic">
           <div className="movieSiteLink">
-            <a href="https://micgarcia.github.io/letterbox/" target="_blank">Visit Site</a>
+            <a href="https://michael-movie-tracker.netlify.app" target="_blank">Visit Site</a>
           </div>
           <div className="movieGitLink">
             <a href="https://github.com/micgarcia/letterbox" target="_blank">Visit Github</a>
